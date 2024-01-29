@@ -14,6 +14,7 @@ user = new steamUser();
 user.logOn({ "accountName": un, "password": pd, "twoFactorCode": steamTotp.generateAuthCode(ss) });
 user.on('loggedOn', () => {
   if (user.steamID != null) console.log(user.steamID + ' - Successfully logged on');
+  else console.log('Failed');
   user.setPersona(status);
   user.gamesPlayed(games);
 });
